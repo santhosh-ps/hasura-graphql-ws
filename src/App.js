@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { UserList } from './User';
+
 
 function App() {
+  const onNewToken = async() => {
+    const tokenPayload = await ( await fetch(`${process.env.REACT_APP_API_URL}/.netlify/functions/token`)).json();
+    console.log(tokenPayload);
+    const url = `${window.location.origin}?token=${tokenPayload.token}`;
+    console.log(url);
+    window.location.href = url; 
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <button onClick={onNewToken}>New Token</button>
+     <UserList/>
     </div>
   );
 }
