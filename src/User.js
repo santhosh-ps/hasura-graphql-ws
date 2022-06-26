@@ -1,5 +1,4 @@
 import { gql, useSubscription } from '@apollo/client';
-import { wsLink } from '.';
 
 const USER = gql`
 subscription  MyQuery {
