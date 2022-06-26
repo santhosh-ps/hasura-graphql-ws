@@ -4,7 +4,7 @@ import { UserList } from './User';
 
 function App() {
   const onNewToken = async() => {
-    const tokenPayload = await ( await fetch(`${process.env.REACT_APP_API_URL}/.netlify/functions/token`)).json();
+    const tokenPayload = await ( await fetch(`/.netlify/functions/token`)).json();
     console.log(tokenPayload);
     const url = `${window.location.origin}?token=${tokenPayload.token}`;
     console.log(url);
