@@ -17,11 +17,12 @@ if(loading){
 }
 if(error) {
     console.log(error);
-    return 'error'+JSON.stringify(error)
+    return 'error '+JSON.stringify(error)
 }
     return ( 
     <>
-    <div>Users: </div>
+    <br/>
+    <div>Subscription Result:</div>
     <div>
         <ul>
             {data.users.map(user => <li key={user.id}>{user.name}</li>)}
