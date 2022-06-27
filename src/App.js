@@ -12,8 +12,8 @@ function App() {
   }
   return (
     <div className="App">
-    <button onClick={onNewToken}>New Token</button>
-     <UserList/>
+      <button onClick={onNewToken}>New Token</button>
+      <UserList/>
     </div>
   );
 }
